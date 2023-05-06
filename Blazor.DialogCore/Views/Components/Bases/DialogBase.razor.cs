@@ -3,9 +3,9 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
@@ -21,8 +21,7 @@ namespace Blazor.DialogCore.Views.Components.Bases
         {
             moduleTask = new(() => jsRuntime!.InvokeAsync<IJSObjectReference>(
                 identifier: "import",
-                args: "./_content/Blazor.DialogCore/Views/Components/Bases/DialogBase.razor.js")
-            .AsTask());
+                args: "./_content/Blazor.DialogCore/Views/Components/Bases/DialogBase.razor.js").AsTask());
 
             dotNetObjectReference = DotNetObjectReference.Create(this);
         }
@@ -55,7 +54,10 @@ namespace Blazor.DialogCore.Views.Components.Bases
             if (firstRender)
             {
                 var module = await moduleTask.Value;
-                await module.InvokeVoidAsync(identifier: "addCloseEventListener", dialogElement, dotNetObjectReference);
+                await module.InvokeVoidAsync(
+                    identifier: "addCloseEventListener",
+                    dialogElement,
+                    dotNetObjectReference);
             }
         }
 
