@@ -1,3 +1,8 @@
+// ------------------------------------------------------------
+// Copyright (c) 2022, Brian Parker All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
 using DemoApp;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
