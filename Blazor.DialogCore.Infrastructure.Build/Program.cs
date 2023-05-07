@@ -13,7 +13,7 @@ namespace Standard.Reflection.Infrastructure.Build
 {
     internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var adoNetClient = new ADotNetClient();
 

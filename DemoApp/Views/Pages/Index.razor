@@ -7,3 +7,17 @@
 Welcome to your new app.
 
 <DialogBase>Test</DialogBase>
+
+<div @ref=myDiv class="bg-danger m-2">
+    Hello
+
+    <div @ref=myDiv2 class="bg-success m-2">
+        Hello
+        <button class="btn btn-primary m-2" @onclick="ButtonClosed">Exit Full-screen</button>
+    </div>
+
+    <button class="btn btn-success m-2" @onclick="Button2Clicked">Make Green Full-screen</button>
+</div>
+
+<button class="btn btn-danger m-2" @onclick="ButtonClicked">Make Red Full-screen</button>
+

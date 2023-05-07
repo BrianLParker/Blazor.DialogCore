@@ -14,7 +14,7 @@ namespace Blazor.DialogCore.Views.Components.Bases
     public partial class DialogBase : ComponentBase, IAsyncDisposable
     {
         private readonly Lazy<Task<IJSObjectReference>> moduleTask;
-        private DotNetObjectReference<DialogBase> dotNetObjectReference;
+        private readonly DotNetObjectReference<DialogBase> dotNetObjectReference;
         private ElementReference dialogElement;
 
         public DialogBase()

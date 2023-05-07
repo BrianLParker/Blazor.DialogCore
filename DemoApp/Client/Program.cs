@@ -3,7 +3,7 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-using DemoApp;
+using Blazor.DialogCore;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -16,7 +16,7 @@ namespace DemoApp
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
             builder.RootComponents.Add<HeadOutlet>("head::after");
-
+            builder.Services.AddDialogCore();
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
             await builder.Build().RunAsync();
